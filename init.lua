@@ -11,9 +11,21 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     lazypath,
   })
 end
+
+-- leader set
+local map = vim.api.nvim_set_keymap
+map('', '<Space>', '', {})
+vim.g.mapleader = ' '
+vim.keymap.set("", "<leader>f", ":ToggleTerm size=40 direction=float<cr>", { desc = "Float terminal" })
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
 -- color scheme
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme miasma]]
+
+-- leader mappings
+
+options = { noremap = true }
+
+-- map( '', '<leader>f', ':ToggleTerm size=40 direction=float<cr>', options )
