@@ -1,4 +1,5 @@
 require "user.options"
+-- require "user.keymappings"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -22,10 +23,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 -- color scheme
-vim.cmd[[colorscheme miasma]]
+vim.cmd[[colorscheme tokyonight]]
 
 -- leader mappings
 
 options = { noremap = true }
-
--- map( '', '<leader>f', ':ToggleTerm size=40 direction=float<cr>', options )

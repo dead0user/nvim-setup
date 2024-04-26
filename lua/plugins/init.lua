@@ -33,5 +33,8 @@ return {
   {
     "nvim-tree/nvim-web-devicons",
     enable = true
+  },
+  {
+    "MunifTanjim/nui.nvim",
   }
 }
