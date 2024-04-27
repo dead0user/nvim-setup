@@ -1,4 +1,5 @@
 require "user.options"
+
 -- require "user.keymappings"
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -17,7 +18,12 @@ end
 local map = vim.api.nvim_set_keymap
 map('', '<Space>', '', {})
 vim.g.mapleader = ' '
-vim.keymap.set("", "<leader>f", ":ToggleTerm size=40 direction=float<cr>", { desc = "Float terminal" })
+
+-- mappings
+vim.keymap.set("n", "<leader>f", ":ToggleTerm size=40 direction=float<cr>", { desc = "Float terminal" })
+vim.keymap.set("n", "<leader>tf", ":Telescope find_files<cr>", { desc = "Telescope - files" })
+vim.keymap.set("n", "<leader>tb", ":Telescope buffers<cr>", { desc = "Telescope - buffers" })
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
@@ -28,3 +34,7 @@ vim.cmd[[colorscheme tokyonight]]
 -- leader mappings
 
 options = { noremap = true }
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+require'lspconfig'.pyright.setup{}
