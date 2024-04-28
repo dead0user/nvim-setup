@@ -22,5 +22,8 @@ return {
   },
   {
     "MunifTanjim/nui.nvim",
+  },
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
   }
 }
