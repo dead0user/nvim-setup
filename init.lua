@@ -21,6 +21,7 @@ vim.g.mapleader = ' '
 
 -- mappings
 vim.keymap.set("n", "<leader>f", ":ToggleTerm size=40 direction=float<cr>", { desc = "Float terminal" })
+vim.keymap.set("n", "<leader>t", "<Ignore>", { desc = "Telescope" })
 vim.keymap.set("n", "<leader>tf", ":Telescope find_files<cr>", { desc = "Telescope - files" })
 vim.keymap.set("n", "<leader>tb", ":Telescope buffers<cr>", { desc = "Telescope - buffers" })
 
@@ -29,7 +30,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 -- color scheme
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme cyberdream]]
 
 -- leader mappings
 
