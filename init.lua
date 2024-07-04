@@ -1,7 +1,5 @@
 require "user.options"
 
--- require "user.keymappings"
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -19,7 +17,7 @@ local map = vim.api.nvim_set_keymap
 map('', '<Space>', '', {})
 vim.g.mapleader = ' '
 
--- mappings
+-- leader menu mappings
 vim.keymap.set("n", "<leader>f", ":ToggleTerm size=40 direction=float<cr>", { desc = "Float terminal" })
 vim.keymap.set("n", "<leader>t", "<Ignore>", { desc = "Telescope" })
 vim.keymap.set("n", "<leader>tf", ":Telescope find_files<cr>", { desc = "Telescope - files" })
@@ -29,7 +27,7 @@ vim.keymap.set("n", "<leader>m", ":Neotree<cr>", { desc = "Neotree - files" })
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
-
+-- require("lazy").setup("themes")
 -- color scheme
 vim.cmd[[colorscheme onedark_vivid]]
 
