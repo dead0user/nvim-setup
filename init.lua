@@ -19,17 +19,12 @@ vim.g.mapleader = ' '
 
 -- leader menu mappings
 vim.keymap.set("n", "<leader>f", ":ToggleTerm size=40 direction=float<cr>", { desc = "Float terminal" })
-vim.keymap.set("n", "<leader>t", "<Ignore>", { desc = "Telescope" })
-vim.keymap.set("n", "<leader>tf", ":Telescope find_files<cr>", { desc = "Telescope - files" })
-vim.keymap.set("n", "<leader>tb", ":Telescope buffers<cr>", { desc = "Telescope - buffers" })
-vim.keymap.set("n", "<leader>m", ":Neotree<cr>", { desc = "Neotree - files" })
-
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 -- require("lazy").setup("themes")
 -- color scheme
-vim.cmd[[colorscheme onedark_vivid]]
+vim.cmd[[colorscheme catppuccin]]
 
 -- leader mappings
 
